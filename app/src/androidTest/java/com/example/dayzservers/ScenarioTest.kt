@@ -1,12 +1,10 @@
 package com.example.dayzservers
 
-import android.window.SplashScreen
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.junit.runners.JUnit4
 
 @RunWith(AndroidJUnit4::class)
 class ScenarioTest {
@@ -21,7 +19,7 @@ class ScenarioTest {
 
         val searchScreen = SearchScreen()
         searchScreen.checkVisible()
-        searchScreen.checkError("Service unavailable")
+        searchScreen.checkError(message = "Service unavailable")
         searchScreen.clickTryAgain()
 
         searchScreen.checkInfo(servers = 10, players = 228)
