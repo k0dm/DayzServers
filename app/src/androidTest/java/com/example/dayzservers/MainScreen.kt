@@ -11,7 +11,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withParent
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import java.util.concurrent.CompletableFuture.allOf
+import org.hamcrest.CoreMatchers.allOf
 
 class MainScreen {
     fun checkVisible() {
@@ -23,17 +23,19 @@ class MainScreen {
         ).check(matches(isDisplayed()))
 
         onView(
-            allOf(withId(R.id.bottomNavigation)),
-            isAssignableFrom(BottomNavigationView::class.java),
-            withParent(withId(R.id.rootLayot)),
-            withParent(isAssignableFrom(LinearLayout::class.java))
+            allOf(
+                withId(R.id.bottomNavigation),
+                isAssignableFrom(BottomNavigationView::class.java),
+                withParent(withId(R.id.rootLayout)),
+                withParent(isAssignableFrom(LinearLayout::class.java))
+            )
         ).check(matches(isDisplayed()))
 
         onView(
             allOf(
                 withId(R.id.container),
                 isAssignableFrom(FrameLayout::class.java),
-                withParent(withId(R.id.rootLayot)),
+                withParent(withId(R.id.rootLayout)),
                 withParent(isAssignableFrom(LinearLayout::class.java))
             )
         ).check(matches(isDisplayed()))
@@ -42,7 +44,7 @@ class MainScreen {
     fun goToFavoritesScreen() {
         onView(
             allOf(
-                withId(R.id.favorite_item),
+                withId(R.id.favorites_item),
                 withText("Favorites")
             )
         ).perform(click())
