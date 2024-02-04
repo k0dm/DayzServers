@@ -28,7 +28,6 @@ class ScenarioTest {
         }
     }
 
-
     @Test
     fun addToFavoriteTwiceAndCheckInFavorites() {
         firstOpenFailedAndThenSuccess()

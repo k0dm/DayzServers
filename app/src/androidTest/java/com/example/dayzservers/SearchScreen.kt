@@ -12,8 +12,8 @@ import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withParent
 import androidx.test.espresso.matcher.ViewMatchers.withText
+import org.hamcrest.CoreMatchers.allOf
 import org.hamcrest.CoreMatchers.not
-import java.util.concurrent.CompletableFuture.allOf
 
 class SearchScreen {
 
@@ -27,25 +27,26 @@ class SearchScreen {
         )
     )
 
+    private val gameInfoLayoutId = R.id.gameInfoLayout
     private val gameInfoLayout = onView(
         allOf(
-            withId(R.id.gameInfoLayout),
-            isAssignableFrom(LinearLayout),
-            withParent(withId(searchLayout))
+            withId(gameInfoLayoutId),
+            isAssignableFrom(LinearLayout::class.java),
+            withParent(withId(searchLayoutId))
         )
     )
     private val serversTextView = onView(
         allOf(
             withId(R.id.serversTextView),
             isAssignableFrom(TextView::class.java),
-            withParent(isAssignableFrom(gameInfoLayout))
+            withParent(withId(gameInfoLayoutId))
         )
     )
     private val playersTextView = onView(
         allOf(
             withId(R.id.playersTextView),
             isAssignableFrom(TextView::class.java),
-            withParent(isAssignableFrom(gameInfoLayout))
+            withParent(withId(gameInfoLayoutId))
         )
     )
 
@@ -75,7 +76,7 @@ class SearchScreen {
 
     fun checkFavorite(position: Int) {
         onView(RecyclerViewMatcher(recyclerViewId, position, R.id.favoriteImageView))
-            .check(ImageViewDrawableMatcher(R.drawable.favorite))
+            .check(matches(ImageViewDrawableMatcher(R.drawable.favorites_icon)))
     }
 
     fun checkError(message: String) {

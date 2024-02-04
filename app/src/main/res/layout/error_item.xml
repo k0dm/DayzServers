@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/corner_radius_10"
+    android:backgroundTint="@color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="8dp">
+
+    <TextView
+        android:id="@+id/errorTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:fontFamily="@font/roboto_bold"
+        android:textAlignment="center"
+        android:textColor="@color/red"
+        android:textSize="24sp"
+        tools:text="No internet connection" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tryAgainButton"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/try_again"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:cornerRadius="10dp"
+        app:strokeWidth="2dp" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/searchProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:indicatorColor="@color/black"
+        app:indicatorSize="80dp"
+        app:trackColor="@color/white"
+        app:trackCornerRadius="10dp"
+        app:trackThickness="8dp"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/loadingDataTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/loading_data"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:visibility="gone" />
+
+</LinearLayout>

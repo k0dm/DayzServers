@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">DayzServers</string>
+    <string name="search_item">Search</string>
+    <string name="favorites_item">Favorites</string>
+    <string name="servers">Servers:</string>
+    <string name="players">Players:</string>
+    <string name="third_person">Third Person:</string>
+    <string name="modded">Modded:</string>
+    <string name="try_again">Try again</string>
+    <string name="loading_data">Loading data…</string>
+    <string name="favorite_servers">Favorite servers</string>
 </resources>
