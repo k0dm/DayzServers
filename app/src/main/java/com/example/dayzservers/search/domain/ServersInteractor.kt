@@ -1,6 +1,8 @@
 package com.example.dayzservers.search.domain
 
 import com.example.dayzservers.search.data.ServersRepository
+import com.example.dayzservers.search.presentation.UiState
+import com.example.dayzservers.search.presentation.UiStateObservable
 import java.net.UnknownHostException
 
 interface ServersInteractor {
@@ -45,3 +47,4 @@ interface LoadResult {
         }
     }
 }
+

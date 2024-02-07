@@ -1,5 +1,6 @@
 package com.example.dayzservers
 
+import com.example.dayzservers.search.domain.DayzServerDomain
 import com.example.dayzservers.search.presentation.SearchViewModel
 import com.example.dayzservers.search.presentation.UiState
 import org.junit.Before
@@ -67,7 +68,7 @@ class SearchViewModelTest {
         runAsync.pingResult()
         observable.checkUiState(
             UiState.Success(
-                listOfServers = listOf<ServerInfo>(
+                listOfServers = listOf<DayzServerUi>(
                     DayzServerUi(name = "DayzServer 1", isFavorite = false),
                     DayzServerUi(name = "DayzServer 2", isFavorite = false),
                     DayzServerUi(name = "DayzServer 3", isFavorite = false)
@@ -90,10 +91,10 @@ private class FakeInteractor(private val order: Order) : ServersInteractor {
         order.add(INTERACTOR_TOP_SERVERS)
         return if (returnSuccess) {
             LoadResult.Success(
-                listOfServers = listOf<ServerInfo>(
-                    DayzServerUi(name = "DayzServer 1", isFavorite = false),
-                    DayzServerUi(name = "DayzServer 2", isFavorite = false),
-                    DayzServerUi(name = "DayzServer 3", isFavorite = false)
+                listOfServers = listOf<DayzServerDomain>(
+                    DayzServerDomain(name = "DayzServer 1", isFavorite = false),
+                    DayzServerDomain(name = "DayzServer 2", isFavorite = false),
+                    DayzServerDomain(name = "DayzServer 3", isFavorite = false)
                 )
             )
         } else {

@@ -1,7 +1,8 @@
-package com.example.dayzservers
+package com.example.dayzservers.search.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.dayzservers.R
 import com.example.dayzservers.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

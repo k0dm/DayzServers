@@ -1,4 +1,4 @@
-package com.example.dayzservers
+package com.example.dayzservers.core
 
 import android.app.Application
 
