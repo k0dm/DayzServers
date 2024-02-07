@@ -1,13 +1,14 @@
 package com.example.dayzservers.search.data.cloud
 
+import com.example.dayzservers.search.data.DayzServer
 import com.google.gson.annotations.SerializedName
 
 data class DayZServersResponse(
     @SerializedName("data") private val data: List<DayzServerData>,
     @SerializedName("links") private val links: ServerLinks,
 ) {
-    fun toListDayzServerCloud(): List<DayzServerCloud> = data.map {
-        DayzServerCloud(
+    fun toListDayzServer(): List<DayzServer> = data.map {
+        DayzServer(
             id = it.id,
             name = it.attributes.name,
             ip = it.attributes.ip,
